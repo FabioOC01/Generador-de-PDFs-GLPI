@@ -1,0 +1,98 @@
+{% include '@vacationpdf/_pdf_styles.html.twig' %}
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="height:36px;">
+  <tr>
+    <td width="34%" align="left" valign="middle" style="height:36px;">
+      <div style="line-height:36px;">
+        {% if logo_path %}
+          <img src="{{ logo_path }}" height="34" />
+        {% else %}
+          <span style="font-weight:bold; font-size:12pt;">{{ company_name }}</span>
+        {% endif %}
+      </div>
+    </td>
+    <td width="66%" align="center" valign="middle" style="height:36px;">
+      <div class="subtitle" style="line-height:36px; margin:0; padding:0;">SOLICITUD DE VACACIONES</div>
+    </td>
+  </tr>
+</table>
+
+<div style="height:4px;"></div>
+<div class="hr"></div>
+<div style="height:10px;"></div>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td width="50%" valign="top">
+      <div class="box">
+        <div class="h" style="text-align:center;">Información del Empleado</div>
+        <div style="height:10px;"></div>
+        <div class="p"><span class="label">Nombre:</span> {{ employee_name }}</div>
+        <div style="height:6px;"></div>
+        <div class="p"><span class="label">DNI:</span> {{ dni }}</div>
+        <div style="height:6px;"></div>
+        <div class="p"><span class="label">Puesto:</span> {{ employee_title }}</div>
+        <div style="height:6px;"></div>
+        <div class="p"><span class="label">Fecha de inicio de labores:</span> {{ start_work }}</div>
+      </div>
+    </td>
+    <td width="4%"></td>
+    <td width="46%" valign="top">
+      <div class="box">
+        <div class="h" style="text-align:center;">Detalle de la Solicitud</div>
+        <div style="height:10px;"></div>
+        <div class="p"><span class="label">Inicio de vacaciones:</span> {{ vac_start }}</div>
+        <div style="height:6px;"></div>
+        <div class="p"><span class="label">Fin de vacaciones:</span> {{ vac_end }}</div>
+        <div style="height:6px;"></div>
+        <div class="p"><span class="label">N° de días solicitados:</span> {{ days }}</div>
+        <div style="height:6px;"></div>
+        <div class="p"><span class="label">Observaciones:</span> {{ obs }}</div>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<div style="height:14px;"></div>
+
+<div class="box">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td width="45%" valign="top">
+        <div class="h" style="text-align:center;">Resultado</div>
+        <div style="height:8px;"></div>
+        <table align="center" cellpadding="0" cellspacing="0" border="0" style="font-size:9.5pt;">
+          <tr>
+            <td width="18"><span class="checkbox">{{ approval_status == 'approved' ? 'X' : '' }}</span></td>
+            <td><b>Aprobado</b></td>
+          </tr>
+          <tr><td colspan="2" height="8"></td></tr>
+          <tr>
+            <td width="18"><span class="checkbox">{{ approval_status == 'rejected' ? 'X' : '' }}</span></td>
+            <td><b>Rechazado</b></td>
+          </tr>
+        </table>
+      </td>
+      <td width="55%" valign="top">
+        <div class="h" style="text-align:center;">Aprobación</div>
+        <div style="height:8px;"></div>
+        <div class="p"><span class="label">Aprobador(es):</span> {{ approvers }}</div>
+      </td>
+    </tr>
+  </table>
+
+  <div style="height:28px;"></div>
+
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td width="50%" align="center" valign="top">
+        <span class="sig-line">&nbsp;</span><br>
+        <span class="siglbl">Firma del Empleado</span>
+      </td>
+      <td width="50%" align="center" valign="top">
+        <span class="sig-line">&nbsp;</span><br>
+        <span class="siglbl">Firma del Supervisor</span>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,18 @@
+{% include '@vacationpdf/_pdf_styles.html.twig' %}
+
+<div class="title">CONSTANCIA DE VACACIONES</div>
+<div style="height: 10px;"></div>
+<div class="right">{{ current_date_es }}</div>
+<div style="height: 22px;"></div>
+
+<div class="p">
+  {{ company_name }}, certifica que <b>{{ employee_name }}</b>,
+  trabajador, con número de DNI: <b>{{ dni }}</b>, en común acuerdo con la empresa,
+  hace efectivas sus vacaciones desde el <b>{{ vac_start }}</b>
+  hasta el <b>{{ vac_end }}</b> del presente año.
+</div>
+
+<div style="height: 28px;"></div>
+<div><span class="label">Total, vacaciones a disfrutar:</span> {{ days }} día(s)</div>
+<div style="height: 6px;"></div>
+<div><span class="label">Ejercicio:</span> {{ year }}</div>
