@@ -1,4 +1,4 @@
-# vacationpdf — Plugin de GLPI para PDF de Vacaciones y Equipos
+# Plugin de GLPI para PDF de Vacaciones y Equipos
 
 Plugin para **GLPI 11.x** (PHP 8.2+) que genera automáticamente documentos PDF (solicitudes de vacaciones, constancias y conformidades de equipo) cuando una validación de ticket cambia de estado, y los adjunta al ticket como Documentos GLPI.
 
